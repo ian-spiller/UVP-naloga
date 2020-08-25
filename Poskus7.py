@@ -56,8 +56,9 @@ def rast(seznam):
         else:
             indeks=indeks+1
     print(indeksi)
-
-    if len(indeksi)==8:
+    if seznam[1]<0 or seznam[10]<0:
+        return ["Negativna vrednost",10]
+    elif len(indeksi)==8:
         return "Podatki so samo za eno leto"
     elif indeksi==[] and seznam[1]==0:
         return "Deljenje z nic."
@@ -67,15 +68,12 @@ def rast(seznam):
         return rezultat
     else:
         mesto=indeksi[-1]
-        if seznam[10]<=0 or seznam[mesto]<=0:
-            return "Negativna vrednost" 
-        else:
-            print(mesto)
-            rast=round((((seznam[10]/seznam[mesto])**(1/(9-indeksi[-1]))-1)*100),2)
-            koliko_letno_rast=10-indeksi[-1]
-            rezultat=[rast,koliko_letno_rast]
-            print(rast)
-            return rezultat
+        print(mesto)
+        rast=round((((seznam[10]/seznam[mesto])**(1/(9-indeksi[-1]))-1)*100),2)
+        koliko_letno_rast=10-indeksi[-1]
+        rezultat=[rast,koliko_letno_rast]
+        print(rast)
+        return rezultat
 
 #ZACETEK
 
@@ -211,6 +209,7 @@ def sestej():
 
 #P/B
     problem1=""
+    PRICE_BOOK="0"
     vrstica_book_value=izberi_seznam(podatki,"Book Value")
     obdelano_vrstico_book=odstrani_vejice(vrstica_book_value)
     if obdelano_vrstico_book[10]==0:
@@ -277,6 +276,3 @@ def sestej():
 bottle.run(debug=True,reloader=True)
 
 
-aaaa
-bbbb
-cccc

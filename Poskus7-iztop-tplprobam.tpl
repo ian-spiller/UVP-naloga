@@ -66,10 +66,14 @@
             % if not rast_prodaja=="Ni zahteve":
             <li class="mt-3">
                 <ul>
+                    %if rast_prodaja=="Negativna vrednost":
+                    <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli izračunati rasti, saj so podatki negativni.</li>
+                    %else:
                     <li> Povprečna letna rast prodaje v zadnjih destih letih: <b>{{rast_prodaja}}%</b> </li>
+                    %end
                     % if not koliko_letna_rast_prodaja==10:
                     <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli dobiti vseh podatkov zato
-                    je podatek v prejšnji vrstici zračunan za: {{koliko_letna_rast_prodaja}} let</li>
+                    je podatek v prejšnji vrstici izračunan za: {{koliko_letna_rast_prodaja}} let</li>
                     % end
                 </ul>
             </li>
@@ -78,10 +82,14 @@
              % if not rast_operating=="Ni zahteve":
             <li class="my-3">
                 <ul>
+                    %if rast_operating== "Negativna vrednost":
+                    <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli izračunati rasti, saj so podatki negativni.</li>
+                    %else:
                     <li> Povprečna letna rast operativnega zasluška v zadnjih destih letih: <b>{{rast_operating}}%</b> </li>
+                    %end
                     % if not koliko_letna_rast_operating==10:
                     <li class="has-text-danger"> Če se pojavi ta vrstica, nismo uspeli dobiti vseh podatkov zato
-                    je podatek v prejšnji vrstici zračunan za: {{koliko_letna_rast_operating}} let</li>
+                    je podatek v prejšnji vrstici izračunan za: {{koliko_letna_rast_operating}} let</li>
                     %end
                 </ul>
             </li>
@@ -90,10 +98,14 @@
             % if not rast_net=="Ni zahteve":
             <li class="my-3">
                 <ul>
+                    %if rast_net=="Negativna vrednost":
+                    <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli izračunati rasti, saj so podatki negativni.</li>
+                    %else:
                     <li> Povprečna letna rast dobička v zadnjih destih letih: <b>{{rast_net}}%</b></li>
+                    %end
                     % if not koliko_letna_rast_net==10:
                     <li class="has-text-danger"> Če se pojavi ta vrstica, nismo uspeli dobiti vseh podatkov zato
-                    je podatek v prejšnji vrstici zračunan za: {{koliko_letna_rast_net}} let</li>
+                    je podatek v prejšnji vrstici izračunan za: {{koliko_letna_rast_net}} let</li>
                     %end
                 </ul>
             </li>
@@ -102,10 +114,14 @@
             % if not rast_OCF=="Ni zahteve":
             <li class="my-3">
                 <ul>
+                    %if rast_OCF=="Negativna vrednost":
+                    <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli izračunati rasti, saj so podatki negativni.</li>
+                    %else:
                     <li> Povprečna letna rast denarnega operativnega toka v zadnjih destih letih: <b>{{rast_OCF}}%</b></li>
+                    %end
                     % if not koliko_letna_rast_OCF==10:
                     <li class="has-text-danger"> Če se pojavi ta vrstica, nismo uspeli dobiti vseh podatkov zato
-                    je podatek v prejšnji vrstici zračunan za: {{koliko_letna_rast_OCF}} let</li>
+                    je podatek v prejšnji vrstici izračunan za: {{koliko_letna_rast_OCF}} let</li>
                     %end
                 </ul>
             </li>
