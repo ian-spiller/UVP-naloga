@@ -13,6 +13,7 @@ def izberi_seznam(seznam,ime):
             return x
 
 #TA FUNKCIJA SE ZNEBI TTM-ja(seznam za eno krajsi)       
+
 def odstrani_vejice(seznam):
     nov_seznam=[seznam[0]]
     for x in seznam[1:11]:

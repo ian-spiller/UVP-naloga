@@ -2,7 +2,7 @@
     <h1 class="has-text-weight-bold is-size-3 has-text-centered mb-4">Rezultati</h1>
     <ul class="has-text-centered">
         <li class="has-text-weight-bold is-size-5">Kratica delniške družbe na NYSE: {{kratica}}</li>
-        <li class="has-text-weight-bold is-size-6">Cena: {{cena}}$</li>
+        <li class="has-text-weight-bold is-size-6">Trenutna cena delnice: {{cena}}$</li>
     </ul>
     <div class="columns my-6">
          <div class="column" style="border-color:hsl(141, 71%, 48%); border-style:solid; border-radius:30px 30px 30px 30px;">
@@ -14,7 +14,7 @@
                     <li>
                      Povprečen koeficient cena/zaslužek zadnjih {{leta}} let: <b>{{price_earning}}</b> </li>
                     % if not brez_vrednosti_eps==0:
-                    <li class="has-text-danger"> Število mankajočih podatkov: {{brez_vrednosti_eps}}</li>
+                    <li class="has-text-danger"> Število manjkajočih podatkov: {{brez_vrednosti_eps}}</li>
                     %end
                     %if not negativne_vrednosti_eps==0:
                     <li class="has-text-danger"> Kolikokrat je bil zaslužek negativen: {{negativne_vrednosti_eps}}</li>
@@ -29,7 +29,7 @@
                     <li> 
                         Povprečen koeficient cena/operativni denarni tok zadnjih {{leta}} let: <b>{{price_OCF}}</b> </li>
                     %if not brez_vrednosti_OCF==0:
-                    <li class="has-text-danger"> Število mankajočih podatkov: {{brez_vrednosti_OCF}}</li>
+                    <li class="has-text-danger"> Število manjkajočih podatkov: {{brez_vrednosti_OCF}}</li>
                     %end
                     %if not negativne_vrednosti_OCF==0:
                     <li class="has-text-danger"> Kolikokrat je bil operativni denarni tok negativen: {{negativne_vrednosti_OCF}}</li>
@@ -41,7 +41,7 @@
              % if not P_B=="Ni zahteve":
             <li class="my-3">
                 <ul>
-                    <li> Trenuten koeficient cena/knjigovodska vrednost delnice: <b>{{price_book}}</b> </li>
+                    <li> Trenutni koeficient cena/knjigovodska vrednost delnice: <b>{{price_book}}</b> </li>
                     % if not problem_P_B=="":
                     <li class="has-text-danger"> Prišlo je do težave: {{problem_P_B}}</li>
                     %end
@@ -67,7 +67,7 @@
             <li class="mt-3">
                 <ul>
                     %if rast_prodaja=="Negativna vrednost":
-                    <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli izračunati rasti, saj so podatki negativni.</li>
+                    <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli izračunati rasti prodaje, saj so podatki negativni.</li>
                     %else:
                     <li> Povprečna letna rast prodaje v zadnjih destih letih: <b>{{rast_prodaja}}%</b> </li>
                     %end
@@ -83,7 +83,7 @@
             <li class="my-3">
                 <ul>
                     %if rast_operating== "Negativna vrednost":
-                    <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli izračunati rasti, saj so podatki negativni.</li>
+                    <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli izračunati rasti operativnega dobička, saj so podatki negativni.</li>
                     %else:
                     <li> Povprečna letna rast operativnega zasluška v zadnjih destih letih: <b>{{rast_operating}}%</b> </li>
                     %end
@@ -99,7 +99,7 @@
             <li class="my-3">
                 <ul>
                     %if rast_net=="Negativna vrednost":
-                    <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli izračunati rasti, saj so podatki negativni.</li>
+                    <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli izračunati rasti dobička, saj so podatki negativni.</li>
                     %else:
                     <li> Povprečna letna rast dobička v zadnjih destih letih: <b>{{rast_net}}%</b></li>
                     %end
@@ -115,7 +115,7 @@
             <li class="my-3">
                 <ul>
                     %if rast_OCF=="Negativna vrednost":
-                    <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli izračunati rasti, saj so podatki negativni.</li>
+                    <li class="has-text-danger">Če se pojavi ta vrstica, nismo uspeli izračunati rasti operativnega denarnega toka, saj so podatki negativni.</li>
                     %else:
                     <li> Povprečna letna rast denarnega operativnega toka v zadnjih destih letih: <b>{{rast_OCF}}%</b></li>
                     %end
